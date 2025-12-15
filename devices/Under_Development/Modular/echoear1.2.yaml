@@ -15,7 +15,7 @@ substitutions:
 
   startup_sound: "Home_Connected" # (options are: available, Home_Connected, Home_Connected_Male, Computer_Ready)
   clock_background_image: "tron" # (options are: clock, hacker, ha-girl, mission, starrysky, waves, tron)
-  imagemodel: "Gwen" # options are:
+  imagemodel: "Salem" # options are:
 
 # Alita, Alfred, Astrobot, Buzz, Casita, Cybergirl, Dory, EVE, Eyes, Eyes2, GLaDOS, Girl1, Guy1, Guy2, Gwen, HA-character, ha-girl, Hacker, Harley,
 # Jarvis, Luffy, Mario, Max, Prime, Robochibi, Robocop, Robot, Robotgirl, Sarah, Shaun
@@ -43,7 +43,7 @@ substitutions:
   sensor5_label: "Hall"
 
 
-  weather_entity: "weather.forecast_home"
+  weather_entity: "weather.pirateweather"
 
 ##################################################################################################################################################
 
@@ -52,7 +52,7 @@ substitutions:
 
 esp32:
   board: esp32-s3-devkitc-1
-  flash_size: 32MB
+  flash_size: 16MB
   cpu_frequency: 240MHz
   framework:
     type: esp-idf
@@ -71,7 +71,7 @@ psram:
 
 packages:
   core:
-    url: https://github.com/RealDeco/xiaozhi-esphome.git
+    url: https://github.com/ekalaitzis/xiaozhi-esphome.git
     ref: main
     refresh: 0s
     files:
