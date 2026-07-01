@@ -1,28 +1,17 @@
 
-# Guition 4.3 p4 eth (JC4880P443C-I-W-Y) hardware pack v1.00
+# Guition 4.3 p4 (JC4880P443C-I-W-Y) Vertical version.
 
 # --- SUNSTITUTIONS NEEDED -----------------------------------------------------
 substitutions:
-  loading_illustration_file: https://github.com/RealDeco/xiaozhi-esphome/raw/main/images/${imagemodel}/${screenwidth}x${screenheight}/loading.png
-  idle_illustration_file: https://github.com/RealDeco/xiaozhi-esphome/raw/main/images/${imagemodel}/${screenwidth}x${screenheight}/idle.png
-  listening_illustration_file: https://github.com/RealDeco/xiaozhi-esphome/raw/main/images/${imagemodel}/${screenwidth}x${screenheight}/listening.png
-  thinking_illustration_file: https://github.com/RealDeco/xiaozhi-esphome/raw/main/images/${imagemodel}/${screenwidth}x${screenheight}/thinking.png
-  replying_illustration_file: https://github.com/RealDeco/xiaozhi-esphome/raw/main/images/${imagemodel}/${screenwidth}x${screenheight}/replying.png
-  error_illustration_file: https://github.com/RealDeco/xiaozhi-esphome/raw/main/images/${imagemodel}/${imagewidth}x${imageheight}/error.png
-  timer_finished_illustration_file: https://github.com/RealDeco/xiaozhi-esphome/raw/main/images/${imagemodel}/${screenwidth}x${screenheight}/timer_finished.png
-  mute_illustration_file: https://github.com/RealDeco/xiaozhi-esphome/raw/main/images/${imagemodel}/${imagewidth}x${imageheight}/mute.png
-  playing_illustration_file: https://github.com/RealDeco/xiaozhi-esphome/raw/main/images/${imagemodel}/${imagewidth}x${imageheight}/playing.png
-  clock_background_file: https://github.com/RealDeco/xiaozhi-esphome/raw/main/images/Other/${screenwidth}x${screenheight}/${clock_background_image}.png
-  startup_sound_file: https://github.com/RealDeco/xiaozhi-esphome/raw/main/sounds/${startup_sound}.flac
+  loading_illustration_file: ${imagepath}/${imagemodel}/${screenwidth}x${screenheight}/loading.png
+  idle_illustration_file: ${imagepath}/${imagemodel}/${screenwidth}x${screenheight}/idle.png
+  listening_illustration_file: ${imagepath}/${imagemodel}/${screenwidth}x${screenheight}/listening.png
+  thinking_illustration_file: ${imagepath}/${imagemodel}/${screenwidth}x${screenheight}/thinking.png
+  replying_illustration_file: ${imagepath}/${imagemodel}/${screenwidth}x${screenheight}/replying.png
 
 # --- CLOCKS PACKAGE -----------------------------------------------------------
 packages:
   clocks: !include ../clocks-standard.yaml
-
-external_components:
-  - source: github://pr#12068
-    components: [mipi_dsi]
-    refresh: 1h
 
 # --- BUSES / PERIPHERALS ------------------------------------------------------
 i2c:
@@ -48,15 +37,18 @@ audio_adc:
   - platform: es7210
     id: es7210_adc
     i2c_id: bus_a
-    #address: 0x36
+    address: 0x36
 
 # --- TOUCHSCREEN --------------------------------------------------------------
 touchscreen:
   - platform: gt911
     id: my_touchscreen
     display: main_display
-#    i2c_id: bus_a
-#    address: 0x14
+    transform:
+      swap_xy: false
+      mirror_x: true
+      mirror_y: true
+
     on_touch:
       then:
         - lambda: |-
@@ -164,7 +156,7 @@ output:
     id: backlight_output
     pin: GPIO23
     frequency: 100Hz
-    inverted: true
+    inverted: false
     min_power: 0.0
     max_power: 0.8
 
@@ -229,7 +221,7 @@ media_player:
             - script.execute: stop_wake_word
             - if:
                 condition:
-                  - lambda: return id(wake_word_engine_location).state == "In Home Assistant";
+                  - lambda: return id(wake_word_engine_location).current_option() == "In Home Assistant";
                 then:
                   - wait_until:
                       condition:
@@ -302,7 +294,7 @@ binary_sensor:
               else:
                 - if:
                     condition:
-                      lambda: return id(wake_word_engine_location).state == "On device";
+                      lambda: return id(wake_word_engine_location).current_option() == "On device";
                     then:
                       - media_player.stop:
                           id: external_media_player

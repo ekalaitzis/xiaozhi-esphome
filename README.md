@@ -4,14 +4,34 @@
 
 **Use your Xiaozhi AI devices in ESPHome as voice assistant satellites for Home Assistant.**
 
-<img width="300" height="972" alt="Screenshot 2025-09-14 at 13 38 39" src="https://github.com/user-attachments/assets/30aff335-13c8-4fc3-9cef-22a0d819d069" />
-<img width="300" height="972" alt="c3c3c178-ab7e-494b-a0a2-6c03bb2b5155" src="https://github.com/user-attachments/assets/c7092055-329a-4471-8c25-b0718e4b2d54" />
+## Quick Links
 
-</div>
-<div align="center">
- 
-<img width="300" height="500" alt="4inch500x500" src="https://github.com/user-attachments/assets/fe149570-bc99-4d8c-b8fc-365cf61f82e7" />
-<img width="300" height="500" alt="4inch500x500" src="https://github.com/user-attachments/assets/bc1a5d50-cb79-46c4-a554-60a62a138d1c" />
+
+The YAML files in `Devices/<device_name>/` are demo configurations and may be outdated, but they are useful for identifying a device.
+
+Use these links for the versions updated with more functionality and are still being developed on:
+
+**[Modular](https://github.com/RealDeco/xiaozhi-esphome/tree/main/devices/Under_Development/Modular)**  
+For ESPHome 2026.4.0+
+
+**[Modular with Sendspin](https://github.com/RealDeco/xiaozhi-esphome/tree/main/devices/Under_Development/Modular/SENDSPIN)**  
+For ESPHome 2026.6.0+
+
+
+<img width="400" src="https://github.com/user-attachments/assets/c26e9291-bd02-4570-8e08-0bee412e07c3" />
+<img width="400" src="https://github.com/user-attachments/assets/0c159139-1c2e-45fe-99f2-6b4a258c1dbe" />
+
+<br/><br/>
+
+<img width="300" src="https://github.com/user-attachments/assets/30aff335-13c8-4fc3-9cef-22a0d819d069" />
+<img width="300" src="https://github.com/user-attachments/assets/c7092055-329a-4471-8c25-b0718e4b2d54" />
+
+<br/><br/>
+
+<img width="300" src="https://github.com/user-attachments/assets/fe149570-bc99-4d8c-b8fc-365cf61f82e7" />
+<img width="300" src="https://github.com/user-attachments/assets/5cf1fd2d-3094-418d-a7cf-882b723aad3d" />
+
+<br/><br/>
 
 <img width="600" src="https://github.com/user-attachments/assets/b66981ab-cdde-4507-821a-26e8d3c57ad6" />
 
@@ -47,6 +67,7 @@ Video going through the esphome install of device was removed by youtube and my 
 * Espressif EchoEar v1.2
 * Spotpear Ball v1
 * Spotpear Ball v2
+* Spotpear Ball v3
 * Spotpear Muma Box v1
 * Spotpear Muma Box v2
 * Spotpear Muma Horse v1
@@ -59,10 +80,15 @@ Video going through the esphome install of device was removed by youtube and my 
 * "Breadboard Mini", the $7 custom ESP32-S3 with everything onboard
 * Waveshare 2.06" OLED Wrist Watch
 * Waveshare ESP32-S3-Touch-LCD-1.85C v1
-* Waveshare ESP32-S3-Touch-LCD-1.85C v2
+* Waveshare ESP32-S3-Touch-LCD-1.85C v1.2 (previously called v2)
 * Waveshare ESP32-S3-Touch-LCD-3.49
 * Waveshare ESP32-P4-86-Panel-ETH-2RO **NEW**
 * Waveshare Audio Board **NEW**
+* Guition 4.3C **NEW**
+* Guition 7.0 **NEW**
+* Freenove 2.8 **NEW**
+* Waveshare amoled 1.75 **NEW**
+* Xingzhi Cube 1.83 2-Mic **NEW**
 
 (New devices appear in the [modular version](devices/Under_Development/Modular)
  first during testing.)
@@ -72,6 +98,8 @@ Video going through the esphome install of device was removed by youtube and my 
 EchoEar: https://www.aliexpress.com/item/1005009834934442.html
 
 Ball v1 & v2: https://vi.aliexpress.com/item/1005008627679270.html
+
+Ball v3: https://www.aliexpress.com/item/1005012340328884.html
 
 alternative link: https://www.aliexpress.com/item/1005009762104155.html
 
@@ -97,6 +125,18 @@ Waveshare ESP32-S3-Touch-LCD-3.49: https://www.aliexpress.com/item/1005009894437
 
 Waveshare ESP32-P4-86-Panel-ETH-2RO: https://www.aliexpress.com/item/1005009197112179.html
 
+Waveshare Audio Board: https://www.aliexpress.com/item/1005009819735457.html
+
+Guition P4 4.3C: https://www.aliexpress.com/item/1005009673625472.html
+
+Guition P4 7.0: https://www.aliexpress.com/item/1005010022828767.html
+
+Freenove 2.8": https://www.aliexpress.com/item/1005009876628479.html
+
+Xingzhi Cube 1.83 2-mic: https://www.aliexpress.com/item/1005010442374066.html
+
+Waveshare amoled 1.75: https://www.aliexpress.com/item/1005008989323572.html
+
 ## Accesories:
 
 Back side case for the 4" (wall mount) nice for desktop use.
@@ -111,6 +151,10 @@ https://makerworld.com/en/models/238543-wireless-charger-holder
 Wireless charger for the Guition JC3636W518 display: https://vi.aliexpress.com/item/1005005066837741.html
 
 Curled audio cable for Guition JC3636W518 display: https://vi.aliexpress.com/item/1005007061609551.html
+
+Case for Freenove 2.8" (remember to pick correct print profile) https://makerworld.com/en/models/1382304-aura-smart-weather-forecast-display
+
+Other 3D files here: https://github.com/RealDeco/xiaozhi-esphome/tree/main/3D_Files
 
 ---EOF
 

@@ -2,6 +2,9 @@ substitutions:
   name: esphome-web-0bac48
   friendly_name: "Xiaozhi Ball V2"
 
+############ 2026.2.0 FIXED ############
+
+
 ## v1.07 26-jul-2025 #############################################################################################################################
 ## changed how to play startup sound to avoid double triggering
 ## v1.06 19-jul-2025 #############################################################################################################################
@@ -253,7 +256,7 @@ binary_sensor:
               else:
                 - if:
                     condition:
-                      lambda: return id(wake_word_engine_location).state == "On device";
+                      lambda: return id(wake_word_engine_location).current_option() == "On device";
                     then:
                       - if:
                           condition:
@@ -291,7 +294,7 @@ binary_sensor:
               else:
                 - if:
                     condition:
-                      lambda: return id(wake_word_engine_location).state == "On device";
+                      lambda: return id(wake_word_engine_location).current_option() == "On device";
                     then:
                       - if:
                           condition:
@@ -412,7 +415,7 @@ media_player:
             - script.execute: stop_wake_word
             - if:
                 condition:
-                  - lambda: return id(wake_word_engine_location).state == "In Home Assistant";
+                  - lambda: return id(wake_word_engine_location).current_option() == "In Home Assistant";
                 then:
                   - wait_until:
                       - not:
@@ -503,7 +506,7 @@ voice_assistant:
                 speaker.is_playing:
     - if:
         condition:
-          - lambda: return id(wake_word_engine_location).state == "On device";
+          - lambda: return id(wake_word_engine_location).current_option() == "On device";
         then:
           - lambda: id(va).set_use_wake_word(false);
           - micro_wake_word.start:
@@ -614,51 +617,52 @@ script:
             - display.page.show: initializing_page
             - component.update: s3_box_lcd
 
+############ 2026.2.0 FIX END ############
   - id: fetch_first_active_timer
     then:
       - lambda: |
-          const auto timers = id(va).get_timers();
-          auto output_timer = timers.begin()->second;
-          for (auto &iterable_timer : timers) {
-            if (iterable_timer.second.is_active && iterable_timer.second.seconds_left <= output_timer.seconds_left) {
-              output_timer = iterable_timer.second;
+          const auto &timers = id(va).get_timers();
+          if (timers.empty()) return;
+
+          auto output_timer = *timers.begin();
+          for (const auto &timer : timers) {
+            if (timer.is_active && timer.seconds_left <= output_timer.seconds_left) {
+              output_timer = timer;
             }
           }
           id(global_first_active_timer) = output_timer;
   - id: check_if_timers_active
     then:
       - lambda: |
-          const auto timers = id(va).get_timers();
+          const auto &timers = id(va).get_timers();
           bool output = false;
-          if (timers.size() > 0) {
-            for (auto &iterable_timer : timers) {
-              if(iterable_timer.second.is_active) {
-                output = true;
-              }
+
+          for (const auto &timer : timers) {
+            if (timer.is_active) {
+              output = true;
+              break;
             }
           }
           id(global_is_timer_active) = output;
   - id: fetch_first_timer
     then:
       - lambda: |
-          const auto timers = id(va).get_timers();
-          auto output_timer = timers.begin()->second;
-          for (auto &iterable_timer : timers) {
-            if (iterable_timer.second.seconds_left <= output_timer.seconds_left) {
-              output_timer = iterable_timer.second;
+          const auto &timers = id(va).get_timers();
+          if (timers.empty()) return;
+
+          auto output_timer = *timers.begin();
+          for (const auto &timer : timers) {
+            if (timer.seconds_left <= output_timer.seconds_left) {
+              output_timer = timer;
             }
           }
           id(global_first_timer) = output_timer;
   - id: check_if_timers
     then:
       - lambda: |
-          const auto timers = id(va).get_timers();
-          bool output = false;
-          if (timers.size() > 0) {
-            output = true;
-          }
-          id(global_is_timer) = output;
-
+          const auto &timers = id(va).get_timers();
+          id(global_is_timer) = !timers.empty();
+############ 2026.2.0 FIX END ############
   - id: draw_timer_timeline
     then:
       - lambda: |
@@ -710,7 +714,7 @@ script:
             and:
               - not:
                   - voice_assistant.is_running:
-              - lambda: return id(wake_word_engine_location).state == "On device";
+              - lambda: return id(wake_word_engine_location).current_option() == "On device";
           then:
             - lambda: id(va).set_use_wake_word(false);
             - micro_wake_word.start:
@@ -719,7 +723,7 @@ script:
             and:
               - not:
                   - voice_assistant.is_running:
-              - lambda: return id(wake_word_engine_location).state == "In Home Assistant";
+              - lambda: return id(wake_word_engine_location).current_option() == "In Home Assistant";
           then:
             - lambda: id(va).set_use_wake_word(true);
             - voice_assistant.start_continuous:
@@ -727,13 +731,13 @@ script:
     then:
       - if:
           condition:
-            lambda: return id(wake_word_engine_location).state == "In Home Assistant";
+            lambda: return id(wake_word_engine_location).current_option() == "In Home Assistant";
           then:
             - lambda: id(va).set_use_wake_word(false);
             - voice_assistant.stop:
       - if:
           condition:
-            lambda: return id(wake_word_engine_location).state == "On device";
+            lambda: return id(wake_word_engine_location).current_option() == "On device";
           then:
             - micro_wake_word.stop:
   - id: set_idle_or_mute_phase

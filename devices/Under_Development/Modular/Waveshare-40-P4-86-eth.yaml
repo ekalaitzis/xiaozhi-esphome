@@ -1,5 +1,5 @@
 substitutions:
-  name: Waveshare-40-p4-86-eth
+  name: waveshare-40-p4-86-eth
   friendly_name: Waveshare 4.0
 
 ## Modular version Main P4 v1.0.01
@@ -16,6 +16,10 @@ substitutions:
   startup_sound: "available" # (options are: available, Home_Connected, Home_Connected_Male, Computer_Ready)
   clock_background_image: "tron" # (options are: clock, hacker, ha-girl, mission, starrysky, waves, tron)
   imagemodel: "Luffy" # options are: Gwen, Luffy, Dory, HA-character
+
+# USE ONLINE OR LOCAL MODEL AND WALLPAPER IMAGES, IMAGES SHOULD BE PLACED IN: homeassistant/www/images/
+  imagepath: "https://github.com/RealDeco/xiaozhi-esphome/raw/main/images"
+#  imagepath: "http://homeassistant.local:8123/local/images/"
 
 ## PRESENCE / MOTION SENSORS ########## IF NOT USING THESE LEAVE THEM ALONE, SCRIPT WILL BREAK WITHOUT ###########################################
 
@@ -50,7 +54,7 @@ substitutions:
 esp32:
   board: esp32-p4-evboard
   flash_size: 32Mb
-  cpu_frequency: 400MHz
+  cpu_frequency: 360MHz
   framework:
     type: esp-idf
     advanced:

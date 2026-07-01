@@ -1,19 +1,19 @@
-# Core v1.11
+# Core 2026.4.1
 
 substitutions:
   allowed_characters: >-
     !#%'()+,-./0123456789:;<>?@ABCDEFGHIJKLMNOPQRSTUVWYZ[]_abcdefghijklmnopqrstuvwxyz{|}°²³µ¿ÁÂÄÅÉÖÚßàáâãäåæçèéêëìíîðñòóôõöøùúûüýþāăąćčďĐđēėęěğĮįıļľŁłńňőřśšťũūůűųźŻżŽžơưșțΆΈΌΐΑΒΓΔΕΖΗΘΚΜΝΠΡΣΤΥΦάέήίαβγδεζηθικλμνξοπρςστυφχψωϊόύώАБВГДЕЖЗИКЛМНОПРСТУХЦЧШЪЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяёђєіїјљњћאבגדהוזחטיכלםמןנסעפץצקרשת،ءآأإئابةتجحخدذرزسشصضطظعغفقكلمنهوىيٹپچڈکگںھہیےংকচতধনফবযরলশষস়ািু্చయలిెొ్ംഅആഇഈഉഎഓകഗങചജഞടഡണതദധനപഫബഭമയരറലളവശസഹാിീുൂെേൈ്ൺൻർൽൾაბგდევზთილმნოპრსტუფქყშჩცძჭხạảấầẩậắặẹẽếềểệỉịọỏốồổỗộớờởợụủứừửữựỳ—、一上不个中为主乾了些亮人任低佔何作供依侧係個側偵充光入全关冇冷几切到制前動區卧厅厨及口另右吊后吗启吸呀咗哪唔問啟嗎嘅嘛器圍在场執場外多大始安定客室家密寵对將小少左已帘常幫幾库度庫廊廚廳开式後恆感態成我戲戶户房所扇手打执把拔换掉控插摄整斯新明是景暗更最會有未本模機檯櫃欄次正氏水沒没洗活派温測源溫漏潮激濕灯為無煙照熱燈燥物狀玄现現瓦用發的盞目着睡私空窗立笛管節簾籬紅線红罐置聚聲脚腦腳臥色节著行衣解設調請謝警设调走路車车运連遊運過道邊部都量鎖锁門閂閉開關门闭除隱離電震霧面音頂題顏颜風风食餅餵가간감갔강개거게겨결경고공과관그금급기길깥꺼껐꼽나난내네놀누는능니다닫담대더데도동됐되된됨둡드든등디때떤뜨라래러렇렌려로료른를리림링마많명몇모무문물뭐바밝방배변보부불블빨뽑사산상색서설성세센션소쇼수스습시신실싱아안않알았애야어얼업없었에여연열옆오온완외왼요운움워원위으은을음의이인일임입있작잠장재전절정제져조족종주줄중줘지직진짐쪽차창천최추출충치침커컴켜켰쿠크키탁탄태탬터텔통트튼티파팬퍼폰표퓨플핑한함해했행혀현화활후휴힘，？
-  loading_illustration_file: https://github.com/ekalaitzis/xiaozhi-esphome/raw/main/images/${imagemodel}/${imagewidth}x${imageheight}/loading.png
-  idle_illustration_file: https://github.com/ekalaitzis/xiaozhi-esphome/raw/main/images/${imagemodel}/${imagewidth}x${imageheight}/idle.png
-  listening_illustration_file: https://github.com/ekalaitzis/xiaozhi-esphome/raw/main/images/${imagemodel}/${imagewidth}x${imageheight}/listening.png
-  thinking_illustration_file: https://github.com/ekalaitzis/xiaozhi-esphome/raw/main/images/${imagemodel}/${imagewidth}x${imageheight}/thinking.png
-  replying_illustration_file: https://github.com/ekalaitzis/xiaozhi-esphome/raw/main/images/${imagemodel}/${imagewidth}x${imageheight}/replying.png
-  error_illustration_file: https://github.com/ekalaitzis/xiaozhi-esphome/raw/main/images/${imagemodel}/${imagewidth}x${imageheight}/error.png
-  timer_finished_illustration_file: https://github.com/ekalaitzis/xiaozhi-esphome/raw/main/images/${imagemodel}/${imagewidth}x${imageheight}/timer_finished.png
-  mute_illustration_file: https://github.com/ekalaitzis/xiaozhi-esphome/raw/main/images/${imagemodel}/${imagewidth}x${imageheight}/mute.png
-  playing_illustration_file: https://github.com/ekalaitzis/xiaozhi-esphome/raw/main/images/${imagemodel}/${imagewidth}x${imageheight}/playing.png
-  clock_background_file: https://github.com/ekalaitzis/xiaozhi-esphome/raw/main/images/Other/${screenwidth}x${screenheight}/${clock_background_image}.png
-  startup_sound_file: https://github.com/ekalaitzis/xiaozhi-esphome/raw/main/sounds/${startup_sound}.flac
+  loading_illustration_file: ${imagepath}/${imagemodel}/${imagewidth}x${imageheight}/loading.png
+  idle_illustration_file: ${imagepath}/${imagemodel}/${imagewidth}x${imageheight}/idle.png
+  listening_illustration_file: ${imagepath}/${imagemodel}/${imagewidth}x${imageheight}/listening.png
+  thinking_illustration_file: ${imagepath}/${imagemodel}/${imagewidth}x${imageheight}/thinking.png
+  replying_illustration_file: ${imagepath}/${imagemodel}/${imagewidth}x${imageheight}/replying.png
+  error_illustration_file: ${imagepath}/${imagemodel}/${imagewidth}x${imageheight}/error.png
+  timer_finished_illustration_file: ${imagepath}/${imagemodel}/${imagewidth}x${imageheight}/timer_finished.png
+  mute_illustration_file: ${imagepath}/${imagemodel}/${imagewidth}x${imageheight}/mute.png
+  playing_illustration_file: ${imagepath}/${imagemodel}/${imagewidth}x${imageheight}/playing.png
+  clock_background_file: ${imagepath}/Other/${screenwidth}x${screenheight}/${clock_background_image}.png
+  startup_sound_file: https://github.com/RealDeco/xiaozhi-esphome/raw/main/sounds/${startup_sound}.flac
 
   loading_illustration_background_color: "000000"
   idle_illustration_background_color: "000000"
@@ -36,7 +36,7 @@ substitutions:
 esphome:
   name: ${name}
   friendly_name: ${friendly_name}
-  min_version: 2025.5.0
+  min_version: 2026.4.0
   name_add_mac_suffix: false
   on_boot:
     priority: 600
@@ -89,10 +89,20 @@ online_image:
 time:
   - platform: homeassistant
     id: homeassistant_time
+    on_time:
+      - seconds: 0
+        then:
+          - if:
+              condition:
+                lambda: return id(show_clock) && !id(clock_show_seconds).state;
+              then:
+                - component.update: main_display
 
 api:
   on_client_connected:
     - script.execute: draw_display
+    - script.execute: stop_wake_word
+    - delay: 2000ms
     - lambda: |-
         if (!id(boot_sound_played)) {
           id(boot_sound_played) = true;
@@ -269,7 +279,7 @@ binary_sensor:
             else:
               - if:
                   condition:
-                    lambda: return id(wake_word_engine_location).state == "On device";
+                    lambda: return id(wake_word_engine_location).current_option() == "On device";
                   then:
                     - media_player.stop:
                         id: external_media_player
@@ -302,7 +312,7 @@ binary_sensor:
               else:
                 - if:
                     condition:
-                      lambda: return id(wake_word_engine_location).state == "On device";
+                      lambda: return id(wake_word_engine_location).current_option() == "On device";
                     then:
                       - media_player.stop:
                           id: external_media_player
@@ -318,7 +328,7 @@ binary_sensor:
           - ON for at least 1s
         then:
           - switch.toggle: show_battery_status
-          - script.execute: draw_display
+          - component.update: main_display
 
   - platform: template
     name: "Timer Ringing Active"
@@ -520,24 +530,13 @@ voice_assistant:
 
     - if:
         condition:
-          - lambda: return id(wake_word_engine_location).state == "On device";
+          lambda: return id(wake_word_engine_location).current_option() == "On device";
         then:
-          - lambda: id(va).set_use_wake_word(false);
-          - micro_wake_word.start:
-
-    - if:
-        condition:
-          lambda: return id(wake_word_engine_location).state == "On device";
-        then:
-          # On-device wake word: behave like your old good config
           - lambda: id(va).set_use_wake_word(false);
           - micro_wake_word.start:
           - script.execute: set_idle_or_mute_phase
           - script.execute: draw_display
         else:
-          # Continuous (In Home Assistant) mode:
-          # don't mess with wake-word; HA handles it
-          # but we still need to escape replying/thinking
           - if:
               condition:
                 lambda: |-
@@ -588,13 +587,13 @@ voice_assistant:
     - script.execute: draw_display
 
   on_timer_cancelled:
-    - script.execute: draw_display
+    - component.update: main_display
 
   on_timer_updated:
-    - script.execute: draw_display
+    - component.update: main_display
 
   on_timer_tick:
-    - script.execute: draw_display
+    - component.update: main_display
 
   on_timer_finished:
     - switch.turn_on: timer_ringing
@@ -618,7 +617,7 @@ interval:
           id(check_if_timers_active).execute();
           const bool has_active_timer = id(global_is_timer_active);
 
-          if (idle_phase && not_muted && clock_ok && not_fullscreen && !has_active_timer) {
+          if (!id(init_in_progress) && idle_phase && not_muted && clock_ok && not_fullscreen && !has_active_timer) {
             id(idle_seconds)++;
             int delay_s = (int) id(clock_delay_seconds).state;
             if (delay_s <= 0) delay_s = 30;
@@ -632,9 +631,17 @@ interval:
           }
       - if:
           condition:
-            lambda: return id(show_clock);
+            lambda: return id(show_clock) && id(clock_show_seconds).state;
           then:
             - component.update: main_display
+
+  - interval: 5s
+    then:
+      - if:
+          condition:
+            lambda: return id(show_clock) && !id(clock_show_seconds).state;
+          then:
+           - component.update: main_display
 
 script:
   - id: draw_display
@@ -704,45 +711,50 @@ script:
 
   - id: fetch_first_active_timer
     then:
-      - lambda: |
-          const auto timers = id(va).get_timers();
-          auto output_timer = timers.begin()->second;
-          for (auto &iterable_timer : timers) {
-            if (iterable_timer.second.is_active && iterable_timer.second.seconds_left <= output_timer.seconds_left) {
-              output_timer = iterable_timer.second;
+      - lambda: |-
+          const auto &timers = id(va).get_timers();
+          if (timers.empty()) return;
+
+          auto output_timer = *timers.begin();
+          for (const auto &timer : timers) {
+            if (timer.is_active && timer.seconds_left <= output_timer.seconds_left) {
+              output_timer = timer;
             }
           }
           id(global_first_active_timer) = output_timer;
 
   - id: check_if_timers_active
     then:
-      - lambda: |
-          const auto timers = id(va).get_timers();
+      - lambda: |-
+          const auto &timers = id(va).get_timers();
           bool output = false;
-          if (timers.size() > 0) {
-            for (auto &iterable_timer : timers) {
-              if (iterable_timer.second.is_active) output = true;
+          for (const auto &timer : timers) {
+            if (timer.is_active) {
+              output = true;
+              break;
             }
           }
           id(global_is_timer_active) = output;
 
   - id: fetch_first_timer
     then:
-      - lambda: |
-          const auto timers = id(va).get_timers();
-          auto output_timer = timers.begin()->second;
-          for (auto &iterable_timer : timers) {
-            if (iterable_timer.second.seconds_left <= output_timer.seconds_left) {
-              output_timer = iterable_timer.second;
+      - lambda: |-
+          const auto &timers = id(va).get_timers();
+          if (timers.empty()) return;
+
+          auto output_timer = *timers.begin();
+          for (const auto &timer : timers) {
+            if (timer.seconds_left <= output_timer.seconds_left) {
+              output_timer = timer;
             }
           }
           id(global_first_timer) = output_timer;
 
   - id: check_if_timers
     then:
-      - lambda: |
-          const auto timers = id(va).get_timers();
-          id(global_is_timer) = (timers.size() > 0);
+      - lambda: |-
+          const auto &timers = id(va).get_timers();
+          id(global_is_timer) = !timers.empty();
 
   - id: draw_timer_timeline
     then:
@@ -937,7 +949,7 @@ script:
 #              - not:
 #                  speaker.is_playing:
 #                    id: box_speaker
-              - lambda: return id(wake_word_engine_location).state == "On device";
+              - lambda: return id(wake_word_engine_location).current_option() == "On device";
           then:
             - lambda: id(va).set_use_wake_word(false);
             - micro_wake_word.start:
@@ -946,7 +958,7 @@ script:
             and:
               - not:
                   voice_assistant.is_running:
-              - lambda: return id(wake_word_engine_location).state == "In Home Assistant";
+              - lambda: return id(wake_word_engine_location).current_option() == "In Home Assistant";
           then:
             - lambda: id(va).set_use_wake_word(true);
             - voice_assistant.start_continuous:
@@ -955,13 +967,13 @@ script:
     then:
       - if:
           condition:
-            lambda: return id(wake_word_engine_location).state == "In Home Assistant";
+            lambda: return id(wake_word_engine_location).current_option() == "In Home Assistant";
           then:
             - lambda: id(va).set_use_wake_word(false);
             - voice_assistant.stop:
       - if:
           condition:
-            lambda: return id(wake_word_engine_location).state == "On device";
+            lambda: return id(wake_word_engine_location).current_option() == "On device";
           then:
             - micro_wake_word.stop:
 
@@ -1014,7 +1026,7 @@ script:
           else:
             - if:
                 condition:
-                  lambda: return id(wake_word_engine_location).state == "On device";
+                  lambda: return id(wake_word_engine_location).current_option() == "On device";
                 then:
                   - if:
                       condition:
@@ -1191,9 +1203,9 @@ switch:
     optimistic: true
     restore_mode: RESTORE_DEFAULT_ON
     on_turn_on:
-      - script.execute: draw_display
+      - component.update: main_display
     on_turn_off:
-      - script.execute: draw_display
+      - component.update: main_display
 
   - platform: template
     id: clock_enabled
@@ -1216,6 +1228,10 @@ switch:
     entity_category: config
     optimistic: true
     restore_mode: RESTORE_DEFAULT_ON
+    on_turn_on:
+      - component.update: main_display
+    on_turn_off:
+      - component.update: main_display
 
   - platform: template
     id: clock_show_time
@@ -1224,6 +1240,10 @@ switch:
     entity_category: config
     optimistic: true
     restore_mode: RESTORE_DEFAULT_ON
+    on_turn_on:
+      - component.update: main_display
+    on_turn_off:
+      - component.update: main_display
 
   - platform: template
     id: clock_show_seconds
@@ -1232,6 +1252,10 @@ switch:
     entity_category: config
     optimistic: true
     restore_mode: RESTORE_DEFAULT_ON
+    on_turn_on:
+      - component.update: main_display
+    on_turn_off:
+      - component.update: main_display
 
   - platform: template
     id: clock_show_date
@@ -1240,6 +1264,10 @@ switch:
     entity_category: config
     optimistic: true
     restore_mode: RESTORE_DEFAULT_ON
+    on_turn_on:
+      - component.update: main_display
+    on_turn_off:
+      - component.update: main_display
 
   - platform: template
     id: clock_show_dots
@@ -1248,6 +1276,10 @@ switch:
     entity_category: config
     optimistic: true
     restore_mode: RESTORE_DEFAULT_ON
+    on_turn_on:
+      - component.update: main_display
+    on_turn_off:
+      - component.update: main_display
 
   - platform: template
     id: clock_show_wallpaper
